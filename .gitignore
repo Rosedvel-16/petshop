@@ -1,0 +1,62 @@
+# ==========================
+# 🚫 GENERAL
+# ==========================
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.lock
+
+# ==========================
+# 📦 DEPENDENCIAS
+# ==========================
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ==========================
+# 🧱 BUILD / DIST
+# ==========================
+dist/
+build/
+.cache/
+.vite/
+.temp/
+
+# ==========================
+# ⚙️ CONFIGURACIÓN LOCAL
+# ==========================
+.env
+.env.local
+.env.*.local
+.vscode/
+.idea/
+*.swp
+
+# ==========================
+# 🧪 TESTS
+# ==========================
+coverage/
+jest.config.js
+*.spec.ts
+*.test.ts
+*.test.js
+
+# ==========================
+# 💾 SUPABASE / CREDENTIALS
+# ==========================
+supabase/.temp/
+supabase/.cache/
+supabase/functions/.env
+supabase/.branches.json
+
+# ==========================
+# 💻 SISTEMAS
+# ==========================
+*.bak
+*.tmp
+*.old
