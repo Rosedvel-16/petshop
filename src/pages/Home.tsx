@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react'
-import { api } from '@/lib/api'
-import ProductCard from '@/components/ProductCard'
+import { api } from '../lib/api'
+import ProductCard from '../components/ProductCard'
 
 export default function Home(){
   const [items, setItems] = useState<any[]>([])
   const [q, setQ] = useState('')
 
-  useEffect(() => { api.listProducts().then(setItems).catch(console.error) }, [])
+  useEffect(() => {
+  api.listProducts()
+    .then(rows => setItems(rows as any[]))   // 👈 cast simple
+    .catch(console.error)
+}, [])
 
   const filtered = items.filter(p => p.is_active && p.name.toLowerCase().includes(q.toLowerCase()))
 

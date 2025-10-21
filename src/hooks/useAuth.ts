@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase'
-import { getMyProfile } from '@/lib/api'
+import { supabase } from '../lib/supabase'
+import { getMyProfile } from '../lib/api'
 
 export function useAuth() {
   const [loading, setLoading] = useState(true)

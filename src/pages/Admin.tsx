@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { api } from '@/lib/api'
+import { api } from '../lib/api'
 
 export default function Admin(){
   const [products, setProducts] = useState<any[]>([])
@@ -10,7 +10,7 @@ export default function Admin(){
   const [pet, setPet] = useState<any>({ name:'', breed:'', description:'', image_url:'', status:'available' })
 
   async function load(){
-    const [a,b] = await Promise.all([api.listProducts(), api.listAdoptions()])
+    const [a,b] = await Promise.all([api.listProducts(), api.listAdoptions()]) as [any[], any[]]
     setProducts(a); setAdoptions(b)
   }
   useEffect(()=>{ load().catch(console.error) }, [])

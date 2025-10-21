@@ -1,9 +1,14 @@
 import { useEffect, useState } from 'react'
-import { api } from '@/lib/api'
-import PetCard from '@/components/PetCard'
+import { api } from '../lib/api'
+import PetCard from '../components/PetCard'
 export default function Adoptions(){
   const [data, setData] = useState<any[]>([])
-  useEffect(()=>{ api.listAdoptions().then(setData).catch(console.error) }, [])
+  useEffect(() => {
+  api.listAdoptions()
+    .then(rows => setData(rows as any[]))   // 👈 cast
+    .catch(console.error)
+}, [])
+
   return (
     <>
       <h1>Perritos en adopción</h1>
